@@ -61,10 +61,16 @@
 
 - (SKNode *)view:(ARSKView *)view nodeForAnchor:(ARAnchor *)anchor {
     // Create and configure a node for the anchor added to the view's session.
-    SKLabelNode *labelNode = [SKLabelNode labelNodeWithText:@"👾"];
-    labelNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
-    labelNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
-    return labelNode;
+    
+    //在视图的会话上，添加以及配置节点node
+//    SKLabelNode *labelNode = [SKLabelNode labelNodeWithText:@"👾"];
+//    labelNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
+//    labelNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
+//    return labelNode;
+    
+    SKSpriteNode *node = [SKSpriteNode spriteNodeWithImageNamed:@"role_1_run_5_0001"];
+    
+    return node;
 }
 
 - (void)session:(ARSession *)session didFailWithError:(NSError *)error {
