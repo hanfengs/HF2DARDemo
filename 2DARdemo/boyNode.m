@@ -13,6 +13,8 @@
 @property (strong, nonatomic) SKAction * walk;
 @property (strong, nonatomic) SKAction * walkForever;
 
+
+
 @end
 
 @implementation boyNode
@@ -22,11 +24,11 @@
         
 
         SKTexture *boy1 = [SKTexture textureWithImageNamed:@"role_1_run_5_0001"];
-        SKTexture *boy2 = [SKTexture textureWithImageNamed:@"role_1_run_5_0002"];
-        SKTexture *boy3 = [SKTexture textureWithImageNamed:@"role_1_run_5_0003"];
-        SKTexture *boy4 = [SKTexture textureWithImageNamed:@"role_1_run_5_0004"];
-        SKTexture *boy5 = [SKTexture textureWithImageNamed:@"role_1_run_5_0005"];
-        SKTexture *boy6 = [SKTexture textureWithImageNamed:@"role_1_run_5_0006"];
+//        SKTexture *boy2 = [SKTexture textureWithImageNamed:@"role_1_run_5_0002"];
+//        SKTexture *boy3 = [SKTexture textureWithImageNamed:@"role_1_run_5_0003"];
+//        SKTexture *boy4 = [SKTexture textureWithImageNamed:@"role_1_run_5_0004"];
+//        SKTexture *boy5 = [SKTexture textureWithImageNamed:@"role_1_run_5_0005"];
+//        SKTexture *boy6 = [SKTexture textureWithImageNamed:@"role_1_run_5_0006"];
         
         
 //        self.walk = [SKAction animateWithTextures:@[boy1, boy2, boy3, boy4, boy5, boy6] timePerFrame:0.1];
@@ -48,7 +50,14 @@
         self.walk = [SKAction animateWithTextures:arrM.copy timePerFrame:0.1];
         self.walkForever = [SKAction repeatActionForever:self.walk];
         
+        
+        SKAction *sound = [SKAction playSoundFileNamed:@"health.mp3" waitForCompletion:false];
+        
+//        SKAction *remove = [SKAction removeFromParent];
+        
         [self runAction:self.walkForever withKey:@"walkForever"];
+        
+        [self runAction:sound withKey:@"sound"];
         
         
     }

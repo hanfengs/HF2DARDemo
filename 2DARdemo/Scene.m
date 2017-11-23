@@ -8,6 +8,10 @@
 
 #import "Scene.h"
 
+@interface Scene()
+
+@end
+
 @implementation Scene
 
 - (void)didMoveToView:(SKView *)view {

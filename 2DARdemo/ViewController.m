@@ -30,7 +30,8 @@
     self.sceneView.showsNodeCount = YES;
     
     // Load the SKScene from 'Scene.sks'
-    Scene *scene = (Scene *)[SKScene nodeWithFileNamed:@"Scene"];
+//    Scene *scene = (Scene *)[SKScene nodeWithFileNamed:@"Scene"];
+    Scene *scene = [Scene sceneWithSize:self.sceneView.bounds.size];
     
     // Present the scene
     [self.sceneView presentScene:scene];
@@ -70,6 +71,7 @@
 //    return labelNode;
     
 //    SKSpriteNode *node = [SKSpriteNode spriteNodeWithImageNamed:@"role_1_run_5_0001"];
+    
     
     boyNode *node = [[boyNode alloc] init];
     
