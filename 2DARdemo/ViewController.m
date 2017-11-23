@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) IBOutlet ARSKView *sceneView;
 
+@property (nonatomic, strong) Scene *scene;
+
 @end
 
 
@@ -31,12 +33,22 @@
     
     // Load the SKScene from 'Scene.sks'
 //    Scene *scene = (Scene *)[SKScene nodeWithFileNamed:@"Scene"];
-    Scene *scene = [Scene sceneWithSize:self.sceneView.bounds.size];
+    _scene = [Scene sceneWithSize:self.sceneView.bounds.size];
     
     // Present the scene
-    [self.sceneView presentScene:scene];
+    [self.sceneView presentScene:_scene];
+    
+    UIButton *btn = [[UIButton alloc] init];
+    btn.frame = CGRectMake(0, 20, 40, 40);
+    [self.view addSubview:btn];
+    [btn setImage:[UIImage imageNamed:@"refresh"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventTouchUpInside];
+    
 }
 
+- (void)refresh:(UIButton *)sender{
+    
+}
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
@@ -71,8 +83,7 @@
 //    return labelNode;
     
 //    SKSpriteNode *node = [SKSpriteNode spriteNodeWithImageNamed:@"role_1_run_5_0001"];
-    
-    
+        
     boyNode *node = [[boyNode alloc] init];
     
     return node;
