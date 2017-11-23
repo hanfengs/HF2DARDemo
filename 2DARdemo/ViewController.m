@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Scene.h"
+#import "boyNode.h"
 
 @interface ViewController () <ARSKViewDelegate>
 
@@ -68,7 +69,9 @@
 //    labelNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
 //    return labelNode;
     
-    SKSpriteNode *node = [SKSpriteNode spriteNodeWithImageNamed:@"role_1_run_5_0001"];
+//    SKSpriteNode *node = [SKSpriteNode spriteNodeWithImageNamed:@"role_1_run_5_0001"];
+    
+    boyNode *node = [[boyNode alloc] init];
     
     return node;
 }
